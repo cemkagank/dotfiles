@@ -57,6 +57,7 @@ echo "${yellow}INFO: Succesfully installed nvim${green} [DONE 4/5]${reset}"
 #-----ZSH------#
 cd ~
 curl -L git.io/antigen > .antigen.zsh
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "${yellow}INFO: Succesfully installed zsh and antigen${green} [DONE 5/5]${reset}"
 #-----ZSH------#
