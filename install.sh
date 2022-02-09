@@ -35,7 +35,7 @@ echo "${yellow}INFO: Succesfully copied config files${green} [DONE 2/5]${reset}"
 #-----Config-----#
 
 #-----DWM-----#
-sudo cp -v src/JetBrains Mono Regular Nerd Font Complete Mono.ttf /usr/share/fonts/TTF/
+sudo cp -v src/JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete\ Mono.ttf /usr/share/fonts/TTF/
 fc-cache
 cd ~
 mkdir -pv pkg
