@@ -9,12 +9,12 @@ yellow=`tput setaf 3`
 sudo xbps-install -y zsh alacritty curl git base-devel ranger harfbuzz-devel \
     libXft-devel libXinerama-devel xorg xinit void-repo-nonfree NetworkManager \
     picom nitrogen firefox nodejs noto-fonts-emoji udiskie pcmanfm lxappearance \
-    plata-theme alsa-utils alsa-lib-devel
+    plata-theme alsa-utils alsa-lib-devel neovim
 sudo xbps-install -Syu
 sudo xbps-install -y nvidia
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 bash -c "cargo install rsblocks"
-echo "${yellow}INFO: Installation of programs are finished${green} [DONE 1/3]${reset}"
+echo "${yellow}INFO: Installation of programs are finished${green} [DONE 1/5]${reset}"
 #-----Programs-----#
 
 #-----Config-----#
@@ -28,25 +28,29 @@ cp -v config_files/starship.toml ${HOME}/.config/starship.toml
 cp -v config_files/xinitrc ${HOME}/.xinitrc
 cp -v config_files/zshrc ${HOME}/.zshrc
 sudo cp -v config_files/10-nvidia-drm-outputclass.conf /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
-echo "${yellow}INFO: Succesfully copied config files${green} [DONE 2/3]${reset}"
+echo "${yellow}INFO: Succesfully copied config files${green} [DONE 2/5]${reset}"
 #-----Config-----#
 
-#-----ZSH------#
-cd ~
-curl -L git.io/antigen > .antigen.zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo "${yellow}INFO: Succesfully installed zsh and antigen${green} [DONE 3/3]${reset}"
-#-----ZSH------#
-
 #-----DWM-----#
+cd ~
+mkdir -pv pkg
 git clone https://github.com/cemkagank/dwm
 cd dwm
 sudo make install
 cd ..
+echo "${yellow}INFO: Succesfully installed dwm${green} [DONE 3/5]${reset}"
 #-----DWM-----#
 
 #-----nvim-----#
 git clone https://github.com/cemkagank/nvim
 cd nvim
 ./install.sh
+echo "${yellow}INFO: Succesfully installed nvim${green} [DONE 4/5]${reset}"
 #-----nvim-----#
+
+#-----ZSH------#
+cd ~
+curl -L git.io/antigen > .antigen.zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "${yellow}INFO: Succesfully installed zsh and antigen${green} [DONE 5/5]${reset}"
+#-----ZSH------#
