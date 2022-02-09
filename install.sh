@@ -9,7 +9,7 @@ yellow=`tput setaf 3`
 sudo xbps-install -y zsh alacritty curl git base-devel ranger harfbuzz-devel \
     libXft-devel libXinerama-devel xorg xinit void-repo-nonfree NetworkManager \
     picom nitrogen firefox nodejs noto-fonts-emoji udiskie pcmanfm lxappearance \
-    plata-theme alsa-utils alsa-lib-devel neovim
+    plata-theme alsa-utils alsa-lib-devel neovim dmenu
 sudo xbps-install -Syu
 sudo xbps-install -y nvidia
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -32,8 +32,11 @@ echo "${yellow}INFO: Succesfully copied config files${green} [DONE 2/5]${reset}"
 #-----Config-----#
 
 #-----DWM-----#
+sudo cp -v src/JetBrains Mono Regular Nerd Font Complete Mono.ttf /usr/share/fonts/TTF/
+fc-cache
 cd ~
 mkdir -pv pkg
+cd pkg
 git clone https://github.com/cemkagank/dwm
 cd dwm
 sudo make install
