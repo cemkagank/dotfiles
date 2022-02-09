@@ -13,6 +13,7 @@ sudo xbps-install -y zsh alacritty curl git base-devel ranger harfbuzz-devel \
 sudo xbps-install -Syu
 sudo xbps-install -y nvidia
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+bash -c "cargo install rsblocks"
 echo "${yellow}INFO: Installation of programs are finished${green} [DONE 1/3]${reset}"
 #-----Programs-----#
 
