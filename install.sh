@@ -30,6 +30,7 @@ cp -v config_files/xinitrc ${HOME}/.xinitrc
 cp -v config_files/zshrc ${HOME}/.zshrc
 cp -v config_files/rsblocks.yml ${HOME}/.config/rsblocks/rsblocks.yml
 sudo cp -v config_files/10-nvidia-drm-outputclass.conf /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+sudo echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 echo "${yellow}INFO: Succesfully copied config files${green} [DONE 2/5]${reset}"
 #-----Config-----#
 
