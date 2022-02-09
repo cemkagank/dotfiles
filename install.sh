@@ -8,9 +8,10 @@ yellow=`tput setaf 3`
 #-----Programs-----#
 sudo xbps-install -y zsh alacritty curl git base-devel ranger harfbuzz-devel \
     libXft-devel libXinerama-devel xorg xinit void-repo-nonfree NetworkManager \
-    picom nitrogen firefox nodejs
+    picom nitrogen firefox nodejs noto-fonts-emoji udiskie pcmanfm lxappearance \
+    plata-theme
 sudo xbps-install -Syu
-sudo xbps-install nvidia
+sudo xbps-install -y nvidia
 echo "${yellow}INFO: Installation of programs are finished${green} [DONE 1/3]${reset}"
 #-----Programs-----#
 
