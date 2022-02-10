@@ -9,11 +9,13 @@ yellow=`tput setaf 3`
 sudo xbps-install -y zsh alacritty curl git base-devel ranger harfbuzz-devel \
     libXft-devel libXinerama-devel xorg xinit void-repo-nonfree NetworkManager \
     picom nitrogen firefox nodejs noto-fonts-emoji udiskie pcmanfm lxappearance \
-    plata-theme alsa-utils alsa-lib-devel neovim dmenu
+    plata-theme alsa-utils alsa-lib-devel neovim dmenu zathura zathura-pdf-mudpf
 sudo xbps-install -Syu
 sudo xbps-install -y nvidia
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 bash -c "cargo install rsblocks"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 echo "${yellow}INFO: Installation of programs are finished${green} [DONE 1/5]${reset}"
 #-----Programs-----#
 
