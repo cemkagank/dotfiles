@@ -25,12 +25,14 @@ sudo ln -s /etc/sv/dbus/ /var/service/
 sudo ln -s /etc/sv/NetworkManager /var/service
 mkdir -pv ${HOME}/.config/alacritty
 mkdir -pv ${HOME}/.config/rsblocks
+mkdir -pv ${HOME}/.config/dunst
 sudo mkdir -pv /etc/X11/xorg.conf.d/
 cp -v config_files/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml 
 cp -v config_files/starship.toml ${HOME}/.config/starship.toml
 cp -v config_files/xinitrc ${HOME}/.xinitrc
 cp -v config_files/zshrc ${HOME}/.zshrc
 cp -v config_files/rsblocks.yml ${HOME}/.config/rsblocks/rsblocks.yml
+cp -v config_files/dunstrc ${HOME}/.config/dunst/dunstrc
 sudo cp -v config_files/10-nvidia-drm-outputclass.conf /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 sudo echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 echo "${yellow}INFO: Succesfully copied config files${green} [DONE 2/5]${reset}"
